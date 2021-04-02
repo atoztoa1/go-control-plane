@@ -82,16 +82,6 @@ func (m *UdpProxyConfig) Validate() error {
 
 	}
 
-	if v, ok := interface{}(m.GetUpstreamSocketConfig()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return UdpProxyConfigValidationError{
-				field:  "UpstreamSocketConfig",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
 	switch m.RouteSpecifier.(type) {
 
 	case *UdpProxyConfig_Cluster:

@@ -7,7 +7,7 @@
 package envoy_extensions_filters_network_dubbo_proxy_v3
 
 import (
-	_ "github.com/cncf/xds/go/udpa/annotations"
+	_ "github.com/cncf/udpa/go/udpa/annotations"
 	v3 "github.com/envoyproxy/go-control-plane/envoy/config/route/v3"
 	v31 "github.com/envoyproxy/go-control-plane/envoy/type/matcher/v3"
 	v32 "github.com/envoyproxy/go-control-plane/envoy/type/v3"
@@ -38,15 +38,7 @@ type RouteConfiguration struct {
 
 	// The name of the route configuration. Reserved for future use in asynchronous route discovery.
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	// The interface name of the service. Wildcard interface are supported in the suffix or prefix form.
-	// e.g. ``*.methods.add`` will match ``com.dev.methods.add``, ``com.prod.methods.add``, etc.
-	// ``com.dev.methods.*`` will match ``com.dev.methods.add``, ``com.dev.methods.update``, etc.
-	// Special wildcard ``*`` matching any interface.
-	//
-	// .. note::
-	//
-	//  The wildcard will not match the empty string.
-	//  e.g. ``*.methods.add`` will match ``com.dev.methods.add`` but not ``.methods.add``.
+	// The interface name of the service.
 	Interface string `protobuf:"bytes,2,opt,name=interface,proto3" json:"interface,omitempty"`
 	// Which group does the interface belong to.
 	Group string `protobuf:"bytes,3,opt,name=group,proto3" json:"group,omitempty"`

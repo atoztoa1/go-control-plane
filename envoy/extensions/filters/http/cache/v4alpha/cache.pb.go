@@ -7,7 +7,7 @@
 package envoy_extensions_filters_http_cache_v4alpha
 
 import (
-	_ "github.com/cncf/xds/go/udpa/annotations"
+	_ "github.com/cncf/udpa/go/udpa/annotations"
 	v4alpha1 "github.com/envoyproxy/go-control-plane/envoy/config/route/v4alpha"
 	v4alpha "github.com/envoyproxy/go-control-plane/envoy/type/matcher/v4alpha"
 	_ "github.com/envoyproxy/protoc-gen-validate/validate"
@@ -30,7 +30,6 @@ const (
 // of the legacy proto package is being used.
 const _ = proto.ProtoPackageIsVersion4
 
-// [#extension: envoy.filters.http.cache.simple_http_cache]
 type CacheConfig struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
